@@ -33,6 +33,7 @@ namespace Teste
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddTransient<IFundosRepository, FundosRepository>();
             services.AddTransient<IResgateRepository, ResgateRepository>();
+            services.AddTransient<IAplicacaoRepository, AplicacaoRepository>();
 
             // Inject an implementation of ISwaggerProvider with defaulted settings applied
             services.AddSwaggerGen(s =>

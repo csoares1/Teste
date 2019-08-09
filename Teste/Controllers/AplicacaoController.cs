@@ -10,11 +10,11 @@ namespace Teste.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ResgateController : ControllerBase
+    public class AplicacaoController : ControllerBase
     {
-        private readonly IResgateRepository repository;
+        private readonly IAplicacaoRepository repository;
 
-        public ResgateController(IResgateRepository repository)
+        public AplicacaoController(IAplicacaoRepository repository)
         {
             this.repository = repository;
         }
@@ -23,7 +23,7 @@ namespace Teste.Controllers
         [HttpGet]
         public ActionResult<List<Investimento>> Get()
         {          
-            return repository.GetResgate();
+            return repository.GetAplicacao();
         }
     }
 }

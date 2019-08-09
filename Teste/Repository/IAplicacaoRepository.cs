@@ -6,9 +6,9 @@ using Teste.Entities;
 
 namespace Teste.Repository
 {
-    public interface IResgateRepository
+    public interface IAplicacaoRepository
     {
-        List<Investimento> GetResgate();     
+        List<Investimento> GetAplicacao();     
 
         
     }

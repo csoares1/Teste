@@ -10,10 +10,10 @@ using Teste.Enums;
 
 namespace Teste.Repository
 {
-    public class ResgateRepository: IResgateRepository
+    public class AplicacaoRepository: IAplicacaoRepository
     {
         IConfiguration _configuration;
-        public ResgateRepository(IConfiguration configuration)
+        public AplicacaoRepository(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -24,7 +24,7 @@ namespace Teste.Repository
             return connection;
         }
 
-        public List<Investimento> GetResgate()
+        public List<Investimento> GetAplicacao()
         {
             var connectionString = this.GetConnection();
             List<Investimento> resgate = new List<Investimento>();
@@ -33,7 +33,7 @@ namespace Teste.Repository
                 try
                 {
                     con.Open();
-                    var query = string.Format("SELECT Id, Tipo, Id_Fundo, cpf_cliente, valor_movimentacao, Data_movimentacao FROM Investimento Where Tipo = {0}", (int)EtipoMovimentacao.Resgate);
+                    var query = string.Format("SELECT Id, Tipo, Id_Fundo, cpf_cliente, valor_movimentacao, Data_movimentacao FROM Investimento Where Tipo = {0}", (int)EtipoMovimentacao.Aplicacao);
                     resgate = con.Query<Investimento>(query).ToList();
                 }
                 catch (Exception ex)

@@ -32,7 +32,7 @@ namespace Teste.Repository
                 try
                 {
                     con.Open();
-                    var query = "SELECT Id, Nome, Cnpj, Investimento FROM Fundos";
+                    var query = "SELECT Id, Nome, Cnpj, InvestimentoInicial FROM Fundos";
                     fundos = con.Query<Fundos>(query).ToList();
                 }
                 catch (Exception ex)

@@ -15,6 +15,7 @@ namespace Teste.Entities
         public string Cpf_cliente { get; set; }
         public decimal Valor_movimentacao { get; set; }
         public DateTime Data_movimentacao { get; set; }
-        public Fundos Id_Fundos { get;  set; }
+        public Guid Id_Fundo { get;  set; }
+
     }
 }
