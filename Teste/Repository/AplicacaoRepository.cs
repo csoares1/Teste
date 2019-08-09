@@ -27,14 +27,14 @@ namespace Teste.Repository
         public List<Investimento> GetAplicacao()
         {
             var connectionString = this.GetConnection();
-            List<Investimento> resgate = new List<Investimento>();
+            List<Investimento> aplicacacao = new List<Investimento>();
             using (var con = new SqlConnection(connectionString))
             {
                 try
                 {
                     con.Open();
                     var query = string.Format("SELECT Id, Tipo, Id_Fundo, cpf_cliente, valor_movimentacao, Data_movimentacao FROM Investimento Where Tipo = {0}", (int)EtipoMovimentacao.Aplicacao);
-                    resgate = con.Query<Investimento>(query).ToList();
+                    aplicacacao = con.Query<Investimento>(query).ToList();
                 }
                 catch (Exception ex)
                 {
@@ -44,7 +44,7 @@ namespace Teste.Repository
                 {
                     con.Close();
                 }
-                return resgate;
+                return aplicacacao;
             }
         }
     }
